@@ -17,13 +17,17 @@ class Genero:
     #sets
 
     def set_id(self, id):
-        self.__id = id
+        if id == '' or ' ':
+            raise ValueError("Atributo ID vazio")
+        else:
+            self.__id = id
     
     def set_genero(self, genero):
-        self.__genero = genero
+        if genero == '' or ' ':
+            raise ValueError("Atributo Genero vazio")
+        else:
+            self.__genero = genero
     
-    def __str__(self):
-        return f'Id: {self.__id} - Genero: {self.__genero}'
 
 class Generos(CRUD):
 

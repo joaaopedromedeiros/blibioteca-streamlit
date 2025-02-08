@@ -2,7 +2,7 @@ from crud import CRUD
 import json
 
 class Livro:
-    def __init__(self, id, livro, autor, idGenero, editora, ano, quantidade):
+    def __init__(self, id, livro, autor, idGenero, editora, ano, quantidade, qtdDisponivel):
         self.__id = id
         self.__livro = livro
         self.__autor = autor
@@ -10,6 +10,7 @@ class Livro:
         self.__editora = editora
         self.__ano = ano
         self.__quantidade = quantidade
+        self.__qtdDisponivel = qtdDisponivel
     
     #gets
 
@@ -34,28 +35,58 @@ class Livro:
     def get_quantidade(self):
         return self.__quantidade
     
+    def get_qtdDisponivel(self):
+        return self.__qtdDisponivel
+    
     #sets
 
     def set_id(self, id):
-        self.__id = id
+        if id == '' or ' ':
+            raise ValueError("Atributo ID vazio")
+        else:
+            self.__id = id
 
     def set_livro(self, livro):
-        self.__livro = livro
+        if livro == '' or ' ':
+            raise ValueError("Atributo Livro vazio")
+        else:
+            self.__livro = livro
 
     def set_autor(self, autor):
-        self.__autor = autor
+        if autor == '' or ' ':
+            raise ValueError("Atributo Autor vazio")
+        else:
+            self.__autor = autor
 
     def set_idGenero(self, idGenero):
-        self.__idGenero = idGenero
+        if idGenero == '' or ' ':
+            raise ValueError("Atributo ID Gênero vazio")
+        else:
+            self.__idGenero = idGenero
 
     def set_editora(self, editora):
-        self.__editora = editora
+        if editora == '' or ' ':
+            raise ValueError("Atributo Editora vazio")
+        else:
+            self.__editora = editora
 
     def set_ano(self, ano):
-        self.__ano = ano
+        if ano == '' or ' ':
+            raise ValueError("Atributo Ano vazio")
+        else:
+            self.__ano = ano
 
     def set_quantidade(self, quantidade):
-        self.__quantidade = quantidade
+        if quantidade == '' or ' ':
+            raise ValueError("Atributo Quantidade vazio")
+        else:
+            self.__quantidade = quantidade
+    
+    def set_qtdDisponivel(self, qtdDisponivel):
+        if qtdDisponivel == '' or ' ':
+            raise ValueError("Atributo Quantidade Disponível vazio")
+        else:
+            self.__qtdDisponivel = qtdDisponivel
     
     def __str__(self):
         return (f'Id: {self.__id}, Livro: {self.__livro}, Autor: {self.__autor}, Gênero: {self.__idGenero}, Editora: {self.__editora}, Ano: {self.__ano}, Quantidade: {self.__quantidade}')
