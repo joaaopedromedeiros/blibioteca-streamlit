@@ -59,8 +59,9 @@ class Usuarios(CRUD):
         u.set_nome(usuario.get_nome())
         u.set_email(usuario.get_email())
         u.set_senha(usuario.get_senha())
+        Usuarios.Salvar()
 
-        
+
     @classmethod
     def Salvar(cls):
         with open("usuarios.json", mode="w") as file:

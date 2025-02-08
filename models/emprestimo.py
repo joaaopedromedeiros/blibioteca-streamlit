@@ -18,6 +18,7 @@ class Emprestimos(CRUD):
         e.set_id(emprestimo.get_id())
         e.set_idUsuario(emprestimo.get_idUsuario())
         e.set_idQuantidade(emprestimo.get_idQuantidade())
+        Emprestimos.Salvar()
 
     @classmethod
     def Salvar(cls):

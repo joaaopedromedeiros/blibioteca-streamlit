@@ -33,6 +33,7 @@ class Generos(CRUD):
         g = CRUD.Listar_Id(genero)
         g.set_id(genero.get_id())
         g.set_genero(genero.get_genero())
+        Generos.Salvar()
 
     @classmethod
     def Salvar(cls):

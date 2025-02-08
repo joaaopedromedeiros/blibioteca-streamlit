@@ -72,6 +72,7 @@ class Livros(CRUD):
         l.set_editora(livro.get_editora())
         l.set_ano(livro.get_ano())
         l.set_quantidade(livro.get_quantidade())
+        Livros.Salvar()
 
 
     @classmethod
