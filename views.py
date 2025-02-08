@@ -57,7 +57,37 @@ class View:
     def Genero_Listar(cls):
         return Generos.Listar()
     
+    @classmethod
+    def Genero_Atualizar(cls, id, genero):
+        g = Genero(id, genero)
+        return Generos.Atualizar(g)
+    
+    @classmethod
+    def Genero_Inserir(cls, genero):
+        g = Genero(0, genero)
+        return Generos.Inserir(g)
+    
+    @classmethod
+    def Genero_Excluir(cls, id):
+        for i  in Generos.Listar():
+            if i.get_id() == id:
+                return Generos.Excluir(i)
+    
     #Emprestimo
     def Emprestimo_Listar(cls):
         return Emprestimos.Listar()
+    
+    def Emprestimo_Atualizar(cls, id, idUsuario, idQuantidade):
+        e = Emprestimo(id, idUsuario, idQuantidade)
+        return Emprestimos.Atualizar(e)
+    
+    def Emprestimo_Inserir(cls, idUsuario, idQuantidade):
+        e = Emprestimo(0,idUsuario, idQuantidade)
+        return Emprestimos.Inserir(e)
+    
+    def Emprestimo_Excluir(cls, id):
+        for i in Emprestimos.Listar():
+            if i.get_id() == id:
+                return Emprestimos.Excluir(i)
+
 
